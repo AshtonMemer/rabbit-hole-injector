@@ -95,12 +95,13 @@ const menuOptions: Record<string, MenuOption> = {
             "utf-8"
           );
 
-          const searchString = `(new%20GamepadExtension())%3B%0A%7D)(Scratch)%3B%0A%20%7D)(Scratch)%3B",`;
+          const searchString = `(new%20GamepadExtension())%3B%0A%7D)(Scratch)%3B%0A%20%7D)(Scratch)%3B"`;
           const position = htmlText.indexOf(searchString);
           const insertPosition = position + searchString.length;
 
           const newHtmlText =
             htmlText.slice(0, insertPosition) +
+            ',' +
             data +
             htmlText.slice(insertPosition);
 
